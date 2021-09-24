@@ -10,6 +10,11 @@ app.get("/", function(req, res){
     res.sendFile(__dirname+"/index.html");
 });
 
+app.get("/bmiCalculator", function(req, res){
+    res.sendFile(__dirname+"/bmiCalculator.html");
+    //res.send("<h1>BMI Calculator</h1>");
+});
+
 app.post("/",function(req, res){
     //console.log(req.body.num1);
     var num1 =Number(req.body.num1);
@@ -18,6 +23,16 @@ app.post("/",function(req, res){
     var result = num1 + num2;
 
     res.send("Result of the calculation: "+result);
+});
+
+app.post("/bmiCalculator",function(req, res){
+    //console.log(req.body.num1);
+    var num1 =Number(req.body.num1);
+    var num2 = Number(req.body.num2);
+
+    var result = num1 / (num2*num2);
+
+    res.send("Your BMI equels: "+result);
 });
 
 

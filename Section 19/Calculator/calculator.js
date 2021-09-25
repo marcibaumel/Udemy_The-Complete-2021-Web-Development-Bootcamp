@@ -29,13 +29,24 @@ app.post("/fullCalculator",function(req, res){
     var num2 = Number(req.body.num2);
     var op = req.body.operator;
 
-    /*
-    if(op === "+"){
-        var result = num1 + num2;
-    }
-    */
+    var result = null;
 
-    res.send("Result: "+result + op);
+    if(op === "+"){
+        result = num1 + num2;
+    }
+    if(op === "-"){
+        result = num1 - num2;
+    }
+    if(op === "*"){
+        result = num1 * num2;
+    }
+    if(op === "/"){
+        result = num1 / num2;
+    }
+    
+
+    
+    res.send("Result: "+result);
 });
 
 

@@ -34,21 +34,18 @@ app.post("/fullCalculator",function(req, res){
     if(op === "+"){
         result = num1 + num2;
     }
-    if(op === "-"){
+    else if(op === "-"){
         result = num1 - num2;
     }
-    if(op === "*"){
+    else if(op === "*"){
         result = num1 * num2;
     }
-    if(op === "/"){
+    else{
         result = num1 / num2;
     }
     
-
-    
     res.send("Result: "+result);
 });
-
 
 
 app.get("/bmiCalculator", function(req, res){

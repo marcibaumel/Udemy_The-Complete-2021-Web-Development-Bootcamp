@@ -10,11 +10,15 @@ app.get("/", function(req,res){
         response.on("data", function(data){
             const weatherData = JSON.parse(data);
             const temp = weatherData.main.temp;
-            console.log(temp);
+            const weatherDes = weatherData.weather[0].description;
+            const icon = weatherData.weather[0].icon;
+            const imgUrl = "https://openweathermap.org/img/wn/"+icon+"@2x.png";
+            res.write("<p>The weather is currently: " + weatherDes+"</p>")
+            res.write("<h1>The tempature in Budapes is " +temp+ " in Celcius.</h1>");
+            res.write("<img src="+imgUrl+">")
+            res.send();
         })
     })
-
-    res.send("Server is running!")
 })
 
 

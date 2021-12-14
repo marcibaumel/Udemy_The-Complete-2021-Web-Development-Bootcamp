@@ -26,3 +26,6 @@ app.listen(3000, function(){
     console.log("Server is running: 3000");
 })
 
+
+//API KEY
+//02a49bc0c0d09478b9400f9c419668f8-us20

@@ -13,7 +13,11 @@ app.get("/contact", function(req, res){
 })
 
 app.get("/about", function(req,res){
-    res.send("About me: my name is Marci")
+    res.send("About me: my name is Marci ")
+})
+
+app.get("/hobbies", function(req,res){
+    res.send("Die")
 })
 
 app.listen(3000, function(){
